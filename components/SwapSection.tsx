@@ -19,7 +19,7 @@ import { useRef } from "react"
 import loader from '@/public/anims/loader.json'
 import Lottie from 'lottie-react';
 
-function SwapSection({ srcToken, destToken }: { srcToken: IToken, destToken: IToken }) {
+function SwapSection({ srcToken, destToken }: { srcToken: IToken | undefined, destToken: IToken | undefined }) {
 
   const [quotes, setQuotes] = useState([])
   const [amount, setAmount] = useState(0)
