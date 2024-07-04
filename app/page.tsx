@@ -13,6 +13,7 @@ import loader from '@/public/anims/loader.json'
 import Lottie from 'lottie-react';
 import { IToken } from '@/components/interface/stateInterfaces';
 import SwapSection from '@/components/SwapSection';
+import Image from 'next/image';
 
 //move to bc
 const blockchains: { value: string, name: string, chainId: string }[] = [
@@ -55,7 +56,7 @@ function Home() {
     setSrcTokenSelected(undefined)
     setSrcTokensLoading(true)
     try {
-      const res = await axios.get(`http://localhost:3002/api/getTokens/${chainId}`)
+      const res = await axios.get(`https://bridge-back.onrender.com/api/getTokens/${chainId}`)
       const fetchedTokens: IToken[] = res.data.data
       setSrcTokens(fetchedTokens);
     } catch (error) {
@@ -69,7 +70,7 @@ function Home() {
     setDestTokenSelected(undefined)
     setDestTokensLoading(true)
     try {
-      const res = await axios.get(`http://localhost:3002/api/getTokens/${chainId}`)
+      const res = await axios.get(`https://bridge-back.onrender.com/api/getTokens/${chainId}`)
       const fetchedTokens: IToken[] = res.data.data
       setDestTokens(fetchedTokens);
     } catch (error) {
@@ -123,7 +124,7 @@ function Home() {
                     onClick={() => setSrcTokenSelected(token)}
                     key={token.address} className={`p-2 border-b border-gray-700 flex justify-between w-full cursor-pointer text-sm h-16 items-center ${srcTokenSelected?.name === token.name && 'bg-slate-950/35 p-3 rounded-lg'}`}>
                     <p className='w-1/4'>
-                      <img src={token.logoURI} className='h-8 w-8' />
+                      <Image src={token.logoURI} alt='' className='h-8 w-8' />
                     </p>
                     <p className='text-white/60 w-1/4'>{token.name}</p>
                     <p className='text-white/60 w-1/4'>{token.chainId}</p>
@@ -172,7 +173,7 @@ function Home() {
                     onClick={() => setDestTokenSelected(token)}
                     key={token.address} className={`p-2 border-b border-gray-700 flex justify-between w-full cursor-pointer text-sm h-16 items-center ${destTokenSelected?.name === token.name && 'bg-slate-950/35 p-3 rounded-lg'}`}>
                     <p className='w-1/4'>
-                      <img src={token.logoURI} className='h-8 w-8' />
+                      <Image src={token.logoURI} alt='' className='h-8 w-8' />
                     </p>
                     <p className='text-white/60 w-1/4'>{token.name}</p>
                     <p className='text-white/60 w-1/4'>{token.chainId}</p>
