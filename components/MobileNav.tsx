@@ -41,7 +41,7 @@ function MobileNav() {
         <div className="mt-16 mb-16 text-center text-2xl">
           <Link href='/'>
             <h1 className="text-4xl font-semibold">
-              Nazim<span className="text-accent">.</span>
+              Bridge<span className="text-accent">.</span>
             </h1>
           </Link>
         </div>
