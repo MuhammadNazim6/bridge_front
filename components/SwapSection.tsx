@@ -101,7 +101,7 @@ function SwapSection({ srcToken, destToken }: { srcToken: IToken | undefined, de
               <div className="md:flex items-center overflow-x-auto custom-scrollbar">
                 {quotes?.length && quotes.map((quote, index) => {
                   return (
-                    <div key={index} className="h-52 shadow-lg bg-accent/55 w-1/4 rounded-r-lg min-w-[250px] active:scale-[.98] active:duration-75 transition-all hover:scale-[1.02] ease-in-out p-6 m-1 cursor-pointer text-xs">
+                    <div key={index} className="h-52 shadow-lg bg-accent/55 w-1/4 rounded-r-lg min-w-[250px] active:scale-[.98] active:duration-75 transition-all hover:scale-[1.02] ease-in-out p-6 m-1 cursor-pointer text-xs overflow-hidden text-ellipsis">
                       <p className='flex justify-between m-2'><span className='text-slate-400'>Est. gas:</span><span className=''> {quote.estimatedGas}</span></p>
                       <p className='flex justify-between m-2'><span className='text-slate-400'>Est. transfer time: </span><span className=''>{quote.estimatedTransferTime}</span></p>
                       <p className='flex justify-between m-2'><span className='text-slate-400'>Src quote usd:</span> <span className=''>{quote.srcQuoteTokenUsdValue}</span></p>
