@@ -16,9 +16,9 @@ function Header() {
           <Nav />
         </div>
 
-        <div className="xl:hidden">
+        {/* <div className="xl:hidden">
           <MobileNav />
-        </div>
+        </div> */}
 
 
 
