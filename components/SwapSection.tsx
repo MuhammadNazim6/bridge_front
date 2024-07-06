@@ -21,12 +21,12 @@ import Lottie from 'lottie-react';
 
 function SwapSection({ srcToken, destToken }: { srcToken: IToken | undefined, destToken: IToken | undefined }) {
 
-  const [quotes, setQuotes] = useState([])
+  const [quotes, setQuotes] = useState<Quote[]>([]);
   const [amount, setAmount] = useState(0)
   const [error, setError] = useState('')
   const [quotesLoading, setQuotesLoading] = useState(false)
   const openDrawerRef = useRef<HTMLButtonElement>(null);
-  
+
   const handleGetQuote = async () => {
     try {
       setQuotesLoading(true)
@@ -103,3 +103,12 @@ function SwapSection({ srcToken, destToken }: { srcToken: IToken | undefined, de
 }
 
 export default SwapSection
+
+type Quote = {
+  estimatedGas: string;
+  estimatedTransferTime: number;
+  srcQuoteTokenUsdValue: string;
+  dstQuoteTokenUsdValue: string;
+  minReceiveAmount: string;
+  dstQuoteTokenAmount: string;
+};
