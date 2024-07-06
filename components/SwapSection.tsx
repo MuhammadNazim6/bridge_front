@@ -25,8 +25,8 @@ function SwapSection({ srcToken, destToken }: { srcToken: IToken | undefined, de
   const [amount, setAmount] = useState(0)
   const [error, setError] = useState('')
   const [quotesLoading, setQuotesLoading] = useState(false)
-  const openDrawerRef = useRef(null)
-
+  const openDrawerRef = useRef<HTMLButtonElement>(null);
+  
   const handleGetQuote = async () => {
     try {
       setQuotesLoading(true)
