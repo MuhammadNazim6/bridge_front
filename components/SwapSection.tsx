@@ -5,6 +5,8 @@ import { IToken } from '@/components/interface/stateInterfaces';
 import { useState } from 'react';
 import axios from 'axios';
 import { Input } from './ui/input';
+import toast, { Toaster } from 'react-hot-toast';
+
 import {
   Drawer,
   DrawerClose,
@@ -40,8 +42,30 @@ function SwapSection({ srcToken, destToken }: { srcToken: IToken | undefined, de
         console.log(fetchedQuotes);
 
         setQuotes(fetchedQuotes)
+        if (fetchedQuotes.length === 0) {
+          toast('No availble quotes for this tokens selection',
+            {
+              icon: '👏',
+              style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+              },
+            }
+          );
+        }
         openDrawerRef?.current?.click()
       } else {
+        toast(res.data.data.errorMsg,
+          {
+            icon: '👏',
+            style: {
+              borderRadius: '10px',
+              background: '#333',
+              color: '#fff',
+            },
+          }
+        );
         setError(res.data.data.errorMsg)
       }
     } catch (error) {
