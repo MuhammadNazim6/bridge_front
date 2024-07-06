@@ -88,10 +88,10 @@ function Home() {
         transition: { delay: 0.2, duration: 0.4, ease: 'easeIn' }
       }}
       className='w-full px-4 md:px-0'>
-      <div className="flex">
+      <div className="md:flex">
         <div className='flex justify-center items-center flex-col space-y-5 w-full'>
 
-          <p className="text-lg text-white text-center">
+          <p className="md:text-lg text-sm text-white text-center">
             Select source chain
           </p>
           <Select onValueChange={handleFetchSrcTokens}>
@@ -138,10 +138,9 @@ function Home() {
           )}
         </div>
 
-        {/*  */}
 
         <div className='flex justify-center items-center flex-col space-y-5 w-full'>
-          <p className="text-lg text-white text-center">
+          <p className="md:text-lg text-sm mt-10 md:mt-0 text-white text-center">
             Select destination chain
           </p>
           <Select onValueChange={handleFetchDestTokens}>
