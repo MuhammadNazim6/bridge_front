@@ -40,7 +40,7 @@ function SwapSection({ srcToken, destToken }: { srcToken: IToken | undefined, de
         console.log(fetchedQuotes);
 
         setQuotes(fetchedQuotes)
-        openDrawerRef.current.click()
+        openDrawerRef?.current?.click()
       } else {
         setError(res.data.data.errorMsg)
       }

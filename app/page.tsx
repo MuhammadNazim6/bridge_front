@@ -124,7 +124,7 @@ function Home() {
                     onClick={() => setSrcTokenSelected(token)}
                     key={token.address} className={`p-2 border-b border-gray-700 flex justify-between w-full cursor-pointer text-sm h-16 items-center ${srcTokenSelected?.name === token.name && 'bg-slate-950/35 p-3 rounded-lg'}`}>
                     <p className='w-1/4'>
-                      <Image src={token.logoURI} alt='' className='h-8 w-8' />
+                      <img src={token.logoURI} alt='' className='h-8 w-8'/>
                     </p>
                     <p className='text-white/60 w-1/4'>{token.name}</p>
                     <p className='text-white/60 w-1/4'>{token.chainId}</p>
@@ -173,7 +173,7 @@ function Home() {
                     onClick={() => setDestTokenSelected(token)}
                     key={token.address} className={`p-2 border-b border-gray-700 flex justify-between w-full cursor-pointer text-sm h-16 items-center ${destTokenSelected?.name === token.name && 'bg-slate-950/35 p-3 rounded-lg'}`}>
                     <p className='w-1/4'>
-                      <Image src={token.logoURI} alt='' className='h-8 w-8' />
+                      <img src={token.logoURI} alt='' className='h-8 w-8'/>
                     </p>
                     <p className='text-white/60 w-1/4'>{token.name}</p>
                     <p className='text-white/60 w-1/4'>{token.chainId}</p>
